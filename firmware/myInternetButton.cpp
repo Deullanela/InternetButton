@@ -1,4 +1,4 @@
-#include "InternetButton.h"
+#include "myInternetButton.h"
 #include "math.h"
 
 //----------------- Button ----------------//
