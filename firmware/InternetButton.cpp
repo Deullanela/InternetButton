@@ -5,9 +5,9 @@
 
 uint8_t pin = 3;
 uint8_t b1 = 4;
-uint8_t b2 = 5;
-uint8_t b3 = 6;
-uint8_t b4 = 7;
+//uint8_t b2 = 5;
+//uint8_t b3 = 6;
+//uint8_t b4 = 7;
 
 
 Adafruit_NeoPixel ring = Adafruit_NeoPixel(PIXEL_COUNT, pin, PIXEL_TYPE);
@@ -26,18 +26,18 @@ void InternetButton::begin(){
     accelerometer.checkAllControlRegs();     // Burst Read all Control Registers, to check for proper setup
 
     pinMode(b1, INPUT_PULLUP);
-    pinMode(b2, INPUT_PULLUP);
-    pinMode(b3, INPUT_PULLUP);
-    pinMode(b4, INPUT_PULLUP);
+   // pinMode(b2, INPUT_PULLUP);
+   // pinMode(b3, INPUT_PULLUP);
+   // pinMode(b4, INPUT_PULLUP);
 }
 
 void InternetButton::begin(int i){
     if(i == 1 || i == 0){
         pin = 17;
         b1 = 1;
-        b2 = 2;
-        b3 = 3;
-        b4 = 4;
+       // b2 = 2;
+       // b3 = 3;
+       // b4 = 4;
     }
 
     ring.begin();
@@ -49,9 +49,9 @@ void InternetButton::begin(int i){
     accelerometer.checkAllControlRegs();     // Burst Read all Control Registers, to check for proper setup
 
     pinMode(b1, INPUT_PULLUP);
-    pinMode(b2, INPUT_PULLUP);
-    pinMode(b3, INPUT_PULLUP);
-    pinMode(b4, INPUT_PULLUP);
+    //pinMode(b2, INPUT_PULLUP);
+   // pinMode(b3, INPUT_PULLUP);
+    //pinMode(b4, INPUT_PULLUP);
 }
 
 void InternetButton::ledOn(uint8_t i, uint8_t r, uint8_t g, uint8_t b){
@@ -134,23 +134,23 @@ uint8_t InternetButton::buttonOn(uint8_t i){
     }
 }
 
-uint8_t InternetButton::allButtonsOn(){
-    if(!digitalRead(b1) && !digitalRead(b2) && !digitalRead(b3) && !digitalRead(b4)) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
-}
+//uint8_t InternetButton::allButtonsOn(){
+ //   if(!digitalRead(b1) && !digitalRead(b2) && !digitalRead(b3) && !digitalRead(b4)) {
+//        return 1;
+//    }
+//    else {
+ //       return 0;
+ //   }
+//}
 
-uint8_t InternetButton::allButtonsOff(){
-    if(digitalRead(b1) && digitalRead(b2) && digitalRead(b3) && digitalRead(b4)) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
-}
+//uint8_t InternetButton::allButtonsOff(){
+ //   if(digitalRead(b1) && digitalRead(b2) && digitalRead(b3) && digitalRead(b4)) {
+ //       return 1;
+ //   }
+ //   else {
+ //       return 0;
+  //  }
+//}
 
 void InternetButton::rainbow(uint8_t wait) {
   uint16_t i, j;
